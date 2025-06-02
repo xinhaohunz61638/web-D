@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>（· —— ·）</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .tabs {
+            display: flex;
+        }
+        .tab {
+            padding: 10px 15px;
+            cursor: pointer;
+            margin-left: 5px;
+            background-color: #555;
+            border-radius: 5px 5px 0 0;
+        }
+        .tab.active {
+            background-color: #777;
+        }
+        .content {
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">（·_·）</div>
+        <div class="tabs">
+            <div class="tab active" onclick="showTab('home')">首页</div>
+            <div class="tab" onclick="showTab('main')">主线任务类</div>
+            <div class="tab" onclick="showTab('collect')">采集材料类</div>
+            <div class="tab" onclick="showTab('fishing')">钓鱼类</div>
+            <div class="tab" onclick="showTab('account')">账号托管类</div>
+            <div class="tab" onclick="showTab('other')">其它</div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="tab-content active" id="home">
+            <h1>电脑端可以在每个页面按“Ctrl”+“F”组合键搜索需要的内容</h1>
+            <div class="notice-box">
+                <h3>首次登录时：</h3>
+                <ol>
+                    <li>提供账号密码登录的，请及时提供您的登录验证的短信验证码</li>
+                    <li>扫码登录仅限单个邀约任务/传说任务，其它项目请提供账号密码</li>
+                </ol>
+            </div>
+            <div class="notice-box">
+                <h3>托管账号：</h3>
+                <ol>
+                    <li>每月最多同时完成3个账号的账号委托，下单托管账号前请提前确认</li>
+                    <li>提供的查验用截图将在您确认订单后，提供给您的度盘链接中收取的，链接有效时长为1年</li>
+                </ol>
+            </div>
+            <div class="notice-box">
+                <h3>完成订单后：请及时在米哈游用户中心删除下单后新增的登录设备，以免造成不必要的损失</h3>
+            </div>
+            
+            <div class="notice-box">
+                <h2>版本1.1，更新时间：25.06.03</h2>
+                <h3>离线版页面用户请及时获取最新版本页面</h3>
+            </div>
+        </div>
+            <div id="main" class="tab-content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>任务</th>
+                        <th>地点</th>
+                        <th>章节</th>
+                        <th>幕</th>
+                        <th>价格分类</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>捕风的异乡人</td>
+                        <td>蒙德</td>
+                        <td>序章</td>
+                        <td>第一幕</td>
+                        <td>￥15.00</td>
+                    </tr>
+                    <tr>
+                        <td>为了没有眼泪的明天</td>
+                        <td>蒙德</td>
+                        <td>序章</td>
+                        <td>第二幕</td>
+                        <td>￥15.00</td>
+                    </tr>
+                    <tr>
+                        <td>巨龙与自由之歌</td>
+                        <td>蒙德</td>
+                        <td>序章</td>
+                        <td>第三幕</td>
+                        <td>￥15.00</td>
+                    </tr>
+                    <tr>
+                        <td>浮世浮生千岩间</td>
+                        <td>璃月</td>
+                        <td>第一章</td>
+                        <td>第一幕</td>
+                        <td>￥12.00</td>
+                    </tr>
+                    <tr>
+                        <td>辞行久远之躯</td>
+                        <td>璃月</td>
+                        <td>第一章</td>
+                        <td>第二幕</td>
+                        <td>￥12.00</td>
+                    </tr>
+                    <tr>
+                        <td>迫近的客星</td>
+                        <td>璃月</td>
+                        <td>第一章</td>
+                        <td>第三幕</td>
+                        <td>￥12.00</td>
+                    </tr>
+                    <tr>
+                        <td>我们终将重逢</td>
+                        <td>璃月</td>
+                        <td>第一章</td>
+                        <td>第四幕</td>
+                        <td>￥12.00</td>
+                    </tr>
+                    <tr>
+                        <td>振袖秋风问红叶</td>
+                        <td>稻妻</td>
+                        <td>第二章</td>
+                        <td>序幕</td>
+                        <td>￥10.00</td>
+                    </tr>
+                    <tr>
+                        <td>不动鸣神，恒昌乐土</td>
+                        <td>稻妻</td>
+                        <td>第二章</td>
+                        <td>第一幕</td>
+                        <td>￥12.00</td>
+                    </tr>
+                    <tr>
+                        <td>无念无想，泡影断灭</td>
+                        <td>稻妻</td>
+                        <td>第二章</td>
+                        <td>第二幕</td>
+                        <td>￥10.00</td>
+                    </tr>
+                    <tr>
+                        <td>千手百眼，天下人间</td>
+                        <td>稻妻</td>
+                        <td>第二章</td>
+                        <td>第三幕</td>
+                        <td>￥12.00</td>
+                    </tr>
+                    <tr>
+                        <td>风起鶴归</td>
+                        <td>璃月</td>
+                        <td>间章</td>
+                        <td>第一幕</td>
+                        <td>￥10.00</td>
+                    </tr>
+                    <tr>
+                        <td>回响渊底的安魂曲</td>
+                        <td>层岩巨渊</td>
+                        <td>第二章</td>
+                        <td>第四幕</td>
+                        <td>￥10.00</td>
+                    </tr>
+                    <tr>
+                        <td>危途疑踪</td>
+                        <td>层岩巨渊</td>
+                        <td>间章</td>
+                        <td>第二幕</td>
+                        <td>￥10.00</td>
+                    </tr>
+                    <tr>
+                        <td>穿越烟帷与暗林</td>
+                        <td>须弥</td>
+                        <td>第三章</td>
+                        <td>第一幕</td>
+                        <td>￥10.00</td>
+                    </tr>
+                    <tr>
+                        <td>千朵玫瑰带来的黎明</td>
+                        <td>须弥</td>
+                        <td>第三章</td>
+                        <td>第二幕</td>
+                        <td>￥10.00</td>
+                    </tr>
+                    <tr>
+                        <td>迷梦与空幻与欺骗</td>
+                        <td>须弥</td>
+                        <td>第三章</td>
+                        <td>第三幕</td>
+                        <td>￥10.00</td>
+                    </tr>
+                    <tr>
+                        <td>赤土之王与三朝圣者</td>
+                        <td>须弥</td>
+                        <td>第三章</td>
+                        <td>第四幕</td>
+                        <td>￥10.00</td>
+                    </tr>
+                    <tr>
+                        <td>虚空鼓动，劫火高扬</td>
+                        <td>须弥</td>
+                        <td>第三章</td>
+                        <td>第五幕</td>
+                        <td>￥10.00</td>
+                    </tr>
+                    <tr>
+                        <td>倾落伽蓝</td>
+                        <td>须弥</td>
+                        <td>间章</td>
+                        <td>第三幕</td>
+                        <td>￥12.00</td>
+                    </tr>
+                    <tr>
+                        <td>卡利贝尔</td>
+                        <td>须弥</td>
+                        <td>第三章</td>
+                        <td>第六幕</td>
+                        <td>￥10.00</td>
+                    </tr>
+                    <tr>
+                        <td>白露与黑潮的序诗</td>
+                        <td>枫丹</td>
+                        <td>第四章</td>
+                        <td>第一幕</td>
+                        <td>￥10.00</td>
+                    </tr>
+                    <tr>
+                        <td>仿若无因飘落的轻雨</td>
+                        <td>枫丹</td>
+                        <td>第四章</td>
+                        <td>第二幕</td>
+                        <td>￥10.00</td>
+                    </tr>
+                    <tr>
+                        <td>向深水中的晨星</td>
+                        <td>枫丹</td>
+                        <td>第四章</td>
+                        <td>第三幕</td>
+                        <td>￥10.00</td>
+                    </tr>
+                    <tr>
+                        <td>谕示胎动的终焉之刻</td>
+                        <td>枫丹</td>
+                        <td>第四章</td>
+                        <td>第四幕</td>
+                        <td>￥10.00</td>
+                    </tr>
+                    <tr>
+                        <td>罪人舞步旋</td>
+                        <td>枫丹</td>
+                        <td>第四章</td>
+                        <td>第五幕</td>
+                        <td>￥10.00</td>
+                    </tr>
+                    <tr>
+                        <td>睡前故事</td>
+                        <td>须弥</td>
+                        <td>第四章</td>
+                        <td>第六幕</td>
+                        <td>￥10.00</td>
+                    </tr>
+                    <tr>
+                        <td>荣花与炎日之途</td>
+                        <td>纳塔</td>
+                        <td>第五章</td>
+                        <td>第一幕</td>
+                        <td>￥12.00</td>
+                    </tr>
+                    <tr>
+                        <td>黑石湮落白石下</td>
+                        <td>纳塔</td>
+                        <td>第五章</td>
+                        <td>第二幕</td>
+                        <td>￥12.00</td>
+                    </tr>
+                    <tr>
+                        <td>镜与谜烟的彼方</td>
+                        <td>纳塔</td>
+                        <td>第五章</td>
+                        <td>第三幕</td>
+                        <td>￥12.00</td>
+                    </tr>
+                    <tr>
+                        <td>命定将焚的虹光</td>
+                        <td>纳塔</td>
+                        <td>第五章</td>
+                        <td>第四幕</td>
+                        <td>￥12.00</td>
+                    </tr>
+                    <tr>
+                        <td>万火归一</td>
+                        <td>纳塔</td>
+                        <td>第五章</td>
+                        <td>幕间</td>
+                        <td>￥12.00</td>
+                    </tr>
+                    <tr>
+                        <td>炽烈的还魂诗</td>
+                        <td>纳塔</td>
+                        <td>第五章</td>
+                        <td>第五幕</td>
+                        <td>￥12.00</td>
+                    </tr>
+                    <tr>
+                        <td>悖理</td>
+                        <td>蒙德</td>
+                        <td>间章</td>
+                        <td>第四幕</td>
+                        <td>￥12.00</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="notice-box">
+                <h3>注意事项：</h3>
+                <ol>
+                    <li>痛苦号在原价格基础上价格×1.5</li>
+                    <li>痛苦号界定标准 (满足以下任意1条即为痛苦号)：
+                        <ul>
+                            <li>世界等级≤7</li>
+                            <li>5星角色突破90级数量<5</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div id="collect" class="tab-content hidden">
+            <table>
+                <thead>
+                    <tr>
+                        <th>物品名称</th>
+                        <th>地点</th>
+                        <th>慢采价格</th>
+                        <th>快采价格</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td>海灵芝</td>
+                            <td>稻妻</td>
+                            <td>￥0.20</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>鸣草</td>
+                            <td>稻妻</td>
+                            <td>￥0.20</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>血斛</td>
+                            <td>稻妻</td>
+                            <td>￥0.20</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>晶化骨髓</td>
+                            <td>稻妻</td>
+                            <td>￥0.20</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>珊瑚真珠</td>
+                            <td>稻妻</td>
+                            <td>￥0.20</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>天云草实</td>
+                            <td>稻妻</td>
+                            <td>￥0.20</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>幽灯蕈</td>
+                            <td>稻妻</td>
+                            <td>￥0.30</td>
+                            <td>￥1.00</td>
+                        </tr>
+                        <tr>
+                            <td>绯樱绣球</td>
+                            <td>稻妻</td>
+                            <td>￥0.40</td>
+                            <td>￥1.00</td>
+                        </tr>
+                        <tr>
+                            <td>鬼兜虫</td>
+                            <td>稻妻</td>
+                            <td>￥0.50</td>
+                            <td>￥2.00</td>
+                        </tr>
+                        <tr>
+                            <td>帕蒂沙兰</td>
+                            <td>须弥</td>
+                            <td>￥0.20</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>月莲</td>
+                            <td>须弥</td>
+                            <td>￥0.30</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>劫波莲</td>
+                            <td>须弥</td>
+                            <td>￥0.30</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>树王圣体菇</td>
+                            <td>须弥</td>
+                            <td>￥0.30</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>圣金虫</td>
+                            <td>须弥</td>
+                            <td>￥0.50</td>
+                            <td>￥2.00</td>
+                        </tr>
+                        <tr>
+                            <td>赤念果</td>
+                            <td>须弥</td>
+                            <td>￥0.30</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>沙脂蛹</td>
+                            <td>须弥</td>
+                            <td>￥0.30</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>万相石</td>
+                            <td>须弥</td>
+                            <td>￥0.30</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>悼灵花</td>
+                            <td>须弥</td>
+                            <td>￥0.30</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>苍晶螺</td>
+                            <td>枫丹</td>
+                            <td>￥0.20</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>柔灯铃</td>
+                            <td>枫丹</td>
+                            <td>￥0.20</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>虹彩蔷薇</td>
+                            <td>枫丹</td>
+                            <td>￥0.20</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>幽光星星</td>
+                            <td>枫丹</td>
+                            <td>￥0.20</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>湖光铃兰</td>
+                            <td>枫丹</td>
+                            <td>￥0.20</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>初露之源</td>
+                            <td>枫丹</td>
+                            <td>￥0.20</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>海露花</td>
+                            <td>枫丹</td>
+                            <td>￥0.30</td>
+                            <td>￥1.00</td>
+                        </tr>
+                        <tr>
+                            <td>子探测单元</td>
+                            <td>枫丹</td>
+                            <td>￥0.50</td>
+                            <td>￥2.00</td>
+                        </tr>
+                        <tr>
+                            <td>青蜜莓</td>
+                            <td>枫丹</td>
+                            <td>￥0.20</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>灼灼彩菊</td>
+                            <td>枫丹</td>
+                            <td>￥0.20</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>浪沫羽鳃</td>
+                            <td>枫丹</td>
+                            <td>￥0.30</td>
+                            <td>￥1.00</td>
+                        </tr>
+                        <tr>
+                            <td>肉龙掌</td>
+                            <td>枫丹</td>
+                            <td>￥0.30</td>
+                            <td>￥1.00</td>
+                        </tr>
+                        <tr>
+                            <td>微光角菌</td>
+                            <td>枫丹</td>
+                            <td>￥0.30</td>
+                            <td>￥1.00</td>
+                        </tr>
+                        <tr>
+                            <td>枯叶紫英</td>
+                            <td>枫丹</td>
+                            <td>￥0.30</td>
+                            <td>￥1.00</td>
+                        </tr>
+                        <tr>
+                            <td>琉鳞石</td>
+                            <td>枫丹</td>
+                            <td>￥0.30</td>
+                            <td>￥1.00</td>
+                        </tr>
+                        <tr>
+                            <td>云岩裂叶</td>
+                            <td>枫丹</td>
+                            <td>￥0.30</td>
+                            <td>￥1.00</td>
+                        </tr>
+                        <tr>
+                            <td>清水玉</td>
+                            <td>璃月</td>
+                            <td>￥0.20</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>绝云椒椒</td>
+                            <td>璃月</td>
+                            <td>￥0.20</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>琉璃袋</td>
+                            <td>璃月</td>
+                            <td>￥0.40</td>
+                            <td>￥1.00</td>
+                        </tr>
+                        <tr>
+                            <td>霓裳花</td>
+                            <td>璃月</td>
+                            <td>￥0.20</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>星螺</td>
+                            <td>璃月</td>
+                            <td>￥0.20</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>清心</td>
+                            <td>璃月</td>
+                            <td>￥0.40</td>
+                            <td>￥1.00</td>
+                        </tr>
+                        <tr>
+                            <td>石珀</td>
+                            <td>璃月</td>
+                            <td>￥0.40</td>
+                            <td>￥1.00</td>
+                        </tr>
+                        <tr>
+                            <td>夜泊石</td>
+                            <td>璃月</td>
+                            <td>￥0.40</td>
+                            <td>￥1.00</td>
+                        </tr>
+                        <tr>
+                            <td>落落莓</td>
+                            <td>蒙德</td>
+                            <td>￥0.20</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>塞西莉亚花</td>
+                            <td>蒙德</td>
+                            <td>￥0.20</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>慕风蘑菇</td>
+                            <td>蒙德</td>
+                            <td>￥0.20</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>蒲公英籽</td>
+                            <td>蒙德</td>
+                            <td>￥0.20</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>小灯草</td>
+                            <td>蒙德</td>
+                            <td>￥0.20</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>风车菊</td>
+                            <td>蒙德</td>
+                            <td>￥0.20</td>
+                            <td>￥0.80</td>
+                        </tr>
+                        <tr>
+                            <td>钩钩果</td>
+                            <td>蒙德</td>
+                            <td>￥0.40</td>
+                            <td>￥1.00</td>
+                        </tr>
+                    </tbody>
+            </table>
+            <div class="notice-box">
+                <h3>注意事项：</h3>
+                <ol>
+                    <li>痛苦号在原价格基础上价格×1.5</li>
+                    <li>痛苦号界定标准 (满足以下任意1条即为痛苦号)：
+                        <ul>
+                            <li>世界等级≤7</li>
+                            <li>5星角色突破90级数量<5</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div id="fishing" class="tab-content hidden">
+            <table>
+                <thead>
+                    <tr>
+                        <th>物品名称</th>
+                        <th>地点</th>
+                        <th>本体价格</th>
+                        <th>精炼价格</th>
+                        <th>急单加价</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td>鱼叉（渔获）</td>
+                            <td>稻妻、璃月</td>
+                            <td>￥15.00</td>
+                            <td>￥5.00</td>
+                            <td>+10￥</td>
+                        </tr>
+                        <tr>
+                            <td>水管（灰河渡手）</td>
+                            <td>枫丹</td>
+                            <td>￥15.00</td>
+                            <td>￥5.00</td>
+                            <td>+10￥</td>
+                        </tr>
+                        <tr>
+                            <td>鱼弓（竭泽）</td>
+                            <td>须弥</td>
+                            <td>￥20.00</td>
+                            <td>￥10.00</td>
+                            <td>+15￥</td>
+                        </tr>
+                    </tbody>    
+            </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th>物品名称</th>
+                        <th>价格</th>
+                        <th>加急价格</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td>成就、书页</td>
+                            <td>1元/池</td>
+                            <td>2元/池</td>
+                        </tr>
+                        <tr>
+                            <td>家具</td>
+                            <td>0.1元/条</td>
+                            <td>0.4元/条</td>
+                        </tr>
+                        <tr>
+                            <td>指定鱼类</td>
+                            <td>0.1元/条</td>
+                            <td>0.4元/条</td>
+                        </tr>
+                        <tr>
+                            <td>鱼饵</td>
+                            <td>0.1元/个</td>
+                            <td>0.4元/个</td>
+                        </tr>
+                        <tr>
+                            <td>鱼饵图纸</td>
+                            <td>1元/个</td>
+                            <td>4元/个</td>
+                        </tr>
+                    </tbody>
+            </table>
+            <div class="notice-box">
+                <h3>注意事项：</h3>
+                <ol>
+                    <li>痛苦号在原价格基础上价格×1.5</li>
+                    <li>痛苦号界定标准 (满足以下任意1条即为痛苦号)：
+                        <ul>
+                            <li>世界等级≤7</li>
+                            <li>5星角色突破90级数量<5</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            
+        </div>
+
+        <div id="account" class="tab-content hidden">
+            <table>
+                <thead>
+                    <tr>
+                        <th>服务类型</th>
+                        <th>每日/每次价格</th>
+                        <th>每周价格</th>
+                        <th>每月价格</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>登录领月卡</td>
+                        <td>￥0.50</td>
+                        <td>￥2.00</td>
+                        <td>￥5.00</td>
+                    </tr>
+                    <tr>
+                        <td>基础款(每日委托+160体力+每日派遣)</td>
+                        <td>￥2.00</td>
+                        <td>￥10.00</td>
+                        <td>￥20.00</td>
+                    </tr>
+                    <tr>
+                        <td>进阶款(每日委托+160体力+每日派遣+每周壶币+锻造+20食物)</td>
+                        <td>-</td>
+                        <td>￥12.00</td>
+                        <td>￥25.00</td>
+                    </tr>
+                    <tr>
+                        <td>豪华款(每日委托+160体力+每日派遣+每周壶币+锻造+20食物)(体力可指定圣遗物/天赋/武器突破)</td>
+                        <td>-</td>
+                        <td>￥15.00</td>
+                        <td>￥35.00</td>
+                    </tr>
+                    <tr>
+                        <td>版本托管服务(豪华版托管+版本大活动+2小活动)</td>
+                        <td>￥64.00</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>版本大活动</td>
+                        <td>￥18</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>小活动</td>
+                        <td>￥9</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="notice-box">
+                <h3>注意事项：</h3>
+                <ol>
+                    <li>痛苦号在原价格基础上价格×1.5</li>
+                    <li>进阶款、豪华款、版本托管服务每日均提供截图以供查验</li>
+                    <li>痛苦号界定标准 (满足以下任意1条即为痛苦号)：
+                        <ul>
+                            <li>世界等级≤7</li>
+                            <li>5星角色突破90级数量<5</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <!-- 账号托管类内容稍后设计 -->
+        </div>
+
+        <div id="other" class="tab-content hidden">
+            <!-- 其它内容稍后设计 -->
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            // 隐藏所有内容
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            // 移除所有标签的活动状态
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // 显示选中的内容
+            document.getElementById(tabId).classList.remove('hidden');
+            
+            // 设置选中标签的活动状态
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
